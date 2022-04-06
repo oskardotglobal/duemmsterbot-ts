@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "A typescript twitch chatbot using twurple.js made for Schlauster",
   "main": "src/index.ts",
+  "type": "module",
   "scripts": {
-    "start": "ts-node src/index.ts"
+    "start": "node --loader ts-node/esm src/index.ts"
   },
   "keywords": [],
   "author": "Oskar Manhart",
@@ -15,6 +16,8 @@
     "typescript": "^4.6.3"
   },
   "dependencies": {
-    "@twurple/auth": "^5.0.18"
+    "@twurple/api": "^5.0.18",
+    "@twurple/auth": "^5.0.18",
+    "@twurple/chat": "^5.0.18"
   }
 }

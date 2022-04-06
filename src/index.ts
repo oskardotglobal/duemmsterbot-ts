@@ -17,22 +17,35 @@
 */
 
 // Importing the required packages
+import { ApiClient } from '@twurple/api';
+import { ChatClient } from '@twurple/chat';
 import { RefreshingAuthProvider } from '@twurple/auth';
 import { promises as fs } from 'fs';
 
-const clientId = 'YOUR_CLIENT_ID';
-const clientSecret = 'YOUR_CLIENT_SECRET';
+// Loading the config file
+const rawConfig = await fs.readFile('./config.json');
+let config = JSON.parse(rawConfig.toString());
 
-const tokenData = async () => {
-    const token = await fs.readFile('./config.json', 'utf8');
-    return JSON.parse(token);
-};
+const clientId = config.clientId;
+const clientSecret = config.clientSecret;
 
+// Creating the auth provider
 const authProvider = new RefreshingAuthProvider(
     {
         clientId,
         clientSecret,
-        onRefresh: async newTokenData => await fs.writeFile('./config.json', JSON.stringify(newTokenData, null, 4), 'UTF-8')
+        onRefresh: async (newTokenData) => {
+            config.tokenData = newTokenData;
+            await fs.writeFile('./config.json', JSON.stringify(config, null, 2));
+            console.log('Token refreshed.');
+        }
     },
-    tokenData
+    config.tokenData
 );
+
+// Creating the api client for later use
+const apiClient = new ApiClient({authProvider});
+
+// Creating the chat client
+const chatClient = new ChatClient({ authProvider, channels: ['schlauster'] });
+await chatClient.connect();

@@ -1,8 +1,10 @@
 {
-  "accessToken": "",
-  "refreshToken": "",
-  "clientID": "",
-  "clientSecret": "",
-  "expiresIn": 0,
-  "obtainmentTimestamp": 0
+  "tokenData": {
+    "accessToken": "",
+    "refreshToken": "",
+    "expiresIn": 0,
+    "obtainmentTimestamp": 0
+  },
+  "clientId": "",
+  "clientSecret": ""
 }
