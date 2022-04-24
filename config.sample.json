@@ -6,5 +6,6 @@
     "obtainmentTimestamp": 0
   },
   "clientId": "",
-  "clientSecret": ""
+  "clientSecret": "",
+  "discordToken": ""
 }
