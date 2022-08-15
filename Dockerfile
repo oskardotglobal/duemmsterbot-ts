@@ -1,4 +1,4 @@
-COPY . /usr/src/botFROM node:16
+FROM node:16
 RUN mkdir -p /home/container
 WORKDIR /home/container
 
