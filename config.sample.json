@@ -1,11 +1,32 @@
 {
-  "tokenData": {
-    "accessToken": "",
-    "refreshToken": "",
-    "expiresIn": 0,
-    "obtainmentTimestamp": 0
+
+  "twitch": {
+    "tokenData": {
+      "accessToken": "",
+      "refreshToken": "",
+      "expiresIn": 0,
+      "obtainmentTimestamp": 0
+    },
+    "clientId": "",
+    "clientSecret": ""
   },
-  "clientId": "",
-  "clientSecret": "",
-  "discordToken": ""
+  "discord": {
+    "token": "",
+    "serverManagers": [
+      ""
+    ],
+    "guildId": ""
+  },
+  "pufferpanel": {
+    "tokenData": {
+      "access_token": "",
+      "token_type": "",
+      "expires_in": 0,
+      "scope": ""
+    },
+    "clientId": "",
+    "clientSecret": "",
+    "baseURL": "",
+    "serverId": ""
+  }
 }
