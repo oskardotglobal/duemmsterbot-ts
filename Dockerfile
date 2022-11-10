@@ -6,6 +6,6 @@ COPY package.json /home/container
 RUN npm install
 
 COPY . /home/container
-RUN npm build
+RUN npm run build
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "start"]
