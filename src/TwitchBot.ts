@@ -118,6 +118,14 @@ class TwitchBot {
                         break;
                     }
 
+                    case '!zettel': {
+                        await chatClient.say(
+                            channel,
+                            "https://clips.twitch.tv/StormyKawaiiButterflyTwitchRPG-dA2_xN7woWm-LqNm"
+                        );
+                        break;
+                    }
+
                     case '!summonjari': {
                         if (msg.userInfo.userName.toLowerCase() != "pixelagent007" || msg.userInfo.userName.toLowerCase() != "schlauster") return;
 
