@@ -144,6 +144,12 @@ class TwitchBot {
                         break;
                     }
 
+                    case '!ip' || '!server': {
+                        await chatClient.say(channel, "IP: 217.160.186.89");
+                        await chatClient.say(channel, "Version: 1.19.2");
+                        break;
+                    }
+
                 }
             }
         });
