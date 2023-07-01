@@ -2,4 +2,5 @@ version: "3"
 
 services:
   app:
-    build: .
+    build: /etc/containers/duemmsterbot
+    restart: unless-stopped

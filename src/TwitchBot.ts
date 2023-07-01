@@ -109,11 +109,9 @@ class TwitchBot {
                     }
 
                     case '!say': {
-                        if (msg.userInfo.userName.toLowerCase() != "pixelagent007") return;
-
-                        await chatClient.say(
+                        if (msg.userInfo.userName.toLowerCase() === "pixelagent007") await chatClient.say(
                             channel,
-                            message.substring(3)
+                            message.substring(4)
                         );
                         break;
                     }
@@ -127,7 +125,7 @@ class TwitchBot {
                     }
 
                     case '!summonjari': {
-                        if (msg.userInfo.userName.toLowerCase() != "pixelagent007" || msg.userInfo.userName.toLowerCase() != "schlauster") return;
+                        if (msg.userInfo.userName.toLowerCase() != "pixelagent007" && msg.userInfo.userName.toLowerCase() != "schlauster") return;
 
                         await chatClient.say(
                             channel,
